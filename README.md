@@ -9,7 +9,7 @@ You can install the package using pip:
 ```bash
 pip install accdbtools
 
-from accdbtools import mdbtools_utils
+from accdbtools import accdb2csv
 
 # Set the path to your accdb file
 accdb_file = "path/to/your/database.accdb"
