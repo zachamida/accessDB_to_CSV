@@ -13,7 +13,7 @@ from accdbtools import accdb2csv
 
 # Set the path to your accdb file
 accdb_file = "path/to/your/database.accdb"
-accdb2csv(file_name)
+accdb2csv(accdb_file)
 ```
 ## Requirements
 
