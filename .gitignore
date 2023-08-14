@@ -1,3 +1,4 @@
 *.accdb
 *.csv
 *.venv_pp
+dist/

@@ -10,7 +10,8 @@
 import pyodbc
 import csv
 
-def acc2csv(mdb_file):
+
+def accdb2csv(mdb_file):
     try:
         connection_string = f"Driver={{Microsoft Access Driver (*.mdb, *.accdb)}};Dbq={mdb_file};"
         connection = pyodbc.connect(connection_string, autocommit=True)
@@ -58,7 +59,7 @@ def export_table_to_csv(connection, table_name, csv_file):
         print("Error:", e)
 
 # Set the path to your MS access file
-mdb_file_path = "C:/Users/username/Desktop/file.accdb"
+#mdb_file_path = "C:/Users/username/Desktop/file.accdb"
 
 # Call the function to perform the column update
-acc2csv(mdb_file_path)
+#acc2csv(mdb_file_path)

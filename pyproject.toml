@@ -1,0 +1,19 @@
+[build-system]
+requires = ["poetry>=1.1.0"]
+build-backend = "poetry.masonry.api"
+
+[tool.poetry]
+name = "accdbtools"
+version = "0.0.2"
+authors = [
+  "Zachary Hamida <zac.hamida@gmail.com>"
+]
+description = "convert accdb tables to csv files"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.6"
+mdbtools = "^0.3.14"
+pyodbc = "^4.0.39"
+
+[tool.poetry.dev-dependencies]
