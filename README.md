@@ -8,7 +8,8 @@ You can install the package using pip:
 
 ```bash
 pip install accdbtools
-
+```
+```python
 from accdbtools import accdb2csv
 
 # Set the path to your accdb file
