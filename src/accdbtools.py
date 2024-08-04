@@ -9,6 +9,7 @@
 
 import pyodbc
 import csv
+import warnings
 
 
 def accdb2csv(mdb_file):
@@ -23,9 +24,11 @@ def accdb2csv(mdb_file):
                 with connection.cursor() as cursor:
                     cursor.execute(col_query)
                 for column in cursor.description:
-                    replace_query = f"UPDATE [{row.table_name}] SET [{column[0]}] = REPLACE([{column[0]}], ',', ' ') WHERE INSTR([{column[0]}], ',') > 0;"
-                    with connection.cursor() as cursor_col:
-                        cursor_col.execute(replace_query)
+                    if column[1].__module__ != 'decimal':
+                        replace_query = f"UPDATE [{row.table_name}] SET [{column[0]}] = REPLACE([{column[0]}], ',', ' ') WHERE INSTR([{column[0]}], ',') > 0;"
+                        with connection.cursor() as cursor_col:
+                            cursor_col.execute(replace_query)
+                    
                 # export to .csv file
                 export_table_to_csv(connection, row.table_name, f"{row.table_name}.csv")
         
